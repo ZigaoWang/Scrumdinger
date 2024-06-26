@@ -14,7 +14,7 @@ struct ScrumsView: View {
     var body: some View {
         NavigationStack {
             List(scrums) { scrum in
-                NavigationLink(destination: Text(scrum.title)) {
+                NavigationLink(destination: DetailView(scrum: scrum)) {
                     CardView(scrum: scrum)
                 }
                 .listRowBackground(scrum.theme.mainColor)
@@ -36,3 +36,4 @@ struct ScrumsView_Previews: PreviewProvider {
         ScrumsView(scrums: DailyScrum.sampleData)
     }
 }
+
